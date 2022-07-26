@@ -5,7 +5,7 @@
       <el-col :lg="19" :offset="1">
         <el-container class="container-right">
           <toolHeader></toolHeader>
-          <router-view></router-view>
+          <router-view class="router-view"></router-view>
         </el-container>
       </el-col>
     </el-row>
@@ -38,6 +38,9 @@ body {
 }
 .container-right{
   display: block!important;
+}
+.router-view{
+  padding-top: 1.5rem;
 }
 </style>
 

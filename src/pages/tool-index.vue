@@ -1,10 +1,13 @@
 <template>
-    <div>123</div>
+    <el-skeleton />
 </template>
 
 <script>
 export default {
     name: "tool-index",
+    mounted(){
+        console.log(this);
+    }
 };
 </script>
 

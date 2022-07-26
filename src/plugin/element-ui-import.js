@@ -19,6 +19,8 @@ import {
     Table,
     TableColumn,
     Col,
+    Skeleton,
+    SkeletonItem,
 } from "element-ui";
 export default {
     install() {
@@ -40,5 +42,7 @@ export default {
         Vue.component(Table.name,Table);
         Vue.component(TableColumn.name,TableColumn);
         Vue.component(Col.name,Col);
+        Vue.component(Skeleton.name, Skeleton);
+        Vue.component(SkeletonItem.name, SkeletonItem);
     },
 };

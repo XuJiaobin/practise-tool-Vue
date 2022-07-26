@@ -1,40 +1,58 @@
 <template>
-  <el-aside width="auto">
-    <section class="logo" style="text-align: center">奇怪的工具箱</section>
-    <el-menu class="el-menu-vertical-demo" :collapse="isCollapse" :router="true">
-      <el-menu-item index="/">
-        <i class="el-icon-menu"></i>
-        <span slot="title">首页</span>
-      </el-menu-item>
-      <el-menu-item index="2" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
-    </el-menu>
-  </el-aside>
+    <el-aside width="auto">
+        <section class="logo" style="text-align: center">奇怪的工具箱</section>
+        <el-menu :default-openeds="['1']" class="el-menu-vertical-demo" :collapse="isCollapse" :router="true">
+            <el-menu-item index="/">
+                <i class="el-icon-menu"></i>
+                <span slot="title">首页</span>
+            </el-menu-item>
+            <el-submenu index="1">
+                <template slot="title">
+                    <i class="el-icon-location"></i>
+                    <span slot="title">开发工具</span>
+                </template>
+                <el-menu-item-group>
+                    <span slot="title">编码转码</span>
+                    <el-menu-item index="/transcoding/unicode">Unicode编码/解码</el-menu-item>
+                    <el-menu-item index="/transcoding/utf8Coding">UTF-8编码</el-menu-item>
+                    <el-menu-item index="/transcoding/urlCoding">URL编码/解码</el-menu-item>
+                    <el-menu-item index="/transcoding/unixTime">unix时间戳转换</el-menu-item>
+                    <el-menu-item index="/transcoding/encodeuri">encodeURI/decodeURI</el-menu-item>
+                </el-menu-item-group>
+                <el-menu-item-group>
+                    <span slot="title">加密解密</span>
+                    <el-menu-item index="/EncryptOrDecode/Base64">Base64编码/解码</el-menu-item>
+                    <el-menu-item index="/EncryptOrDecode/MD5">MD5加密</el-menu-item>
+                    <el-menu-item index="/EncryptOrDecode/Sha1">sha1加密</el-menu-item>
+                </el-menu-item-group>
+                <el-menu-item-group>
+                    <span slot="title">其他</span>
+                    <el-menu-item index="/other/QRCode">二维码生成</el-menu-item>
+                    <el-menu-item index="/other/Regular">正则测试工具</el-menu-item>
+                    <el-menu-item index="/other/RandomNum">随机数生成</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+        </el-menu>
+    </el-aside>
 </template>
 
 <script>
 export default {
-  name: "tool-aside",
-  data() {
-    return {
-      isCollapse: false,
-    };
-  },
+    name: "tool-aside",
+    data() {
+        return {
+            isCollapse: false,
+        };
+    },
 };
 </script>
 
 <style scope>
 .el-aside {
-  min-width: auto;
+    min-width: auto;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: calc(100% - 1px);
-  /* min-height: 400px; */
+    width: calc(100% - 1px);
+    /* min-height: 400px; */
 }
 </style>
