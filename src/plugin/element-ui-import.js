@@ -1,7 +1,9 @@
 import Vue from "vue";
 //引入element-ui
 import {
+    // Message,
     Row,
+    Input,
     Dropdown,
     DropdownMenu,
     DropdownItem,
@@ -21,10 +23,14 @@ import {
     Col,
     Skeleton,
     SkeletonItem,
+    Dialog,
+    Popover,
 } from "element-ui";
 export default {
     install() {
+        Vue.component(Dialog.name,Dialog);
         Vue.component(Row.name,Row);
+        Vue.component(Input.name,Input);
         Vue.component(Button.name,Button);
         Vue.component(Dropdown.name,Dropdown);
         Vue.component(DropdownMenu.name,DropdownMenu);
@@ -44,5 +50,7 @@ export default {
         Vue.component(Col.name,Col);
         Vue.component(Skeleton.name, Skeleton);
         Vue.component(SkeletonItem.name, SkeletonItem);
+        Vue.component(Popover.name, Popover);
+        // Vue.prototype.$message = Message;
     },
 };

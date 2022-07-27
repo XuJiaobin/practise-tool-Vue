@@ -1,8 +1,8 @@
 <template>
   <el-container style="border: 1px solid #eee">
     <el-row>
-      <el-col :lg="3"><toolAside></toolAside></el-col>
-      <el-col :lg="19" :offset="1">
+      <el-col :xl="3" :lg="4" :md="5"><toolAside></toolAside></el-col>
+      <el-col :xl="20" :lg="19" :md="18" :offset="1" class="main_col_right">
         <el-container class="container-right">
           <toolHeader></toolHeader>
           <router-view class="router-view"></router-view>
@@ -11,10 +11,15 @@
     </el-row>
   </el-container>
 </template>
-<style scope>
+<style>
 * {
   padding: 0;
   margin: 0;
+}
+.main_col_right {
+  box-sizing: border-box;
+  padding-right: 4.16667%;
+  overflow-y: auto;
 }
 body {
   overflow: hidden;
@@ -36,11 +41,17 @@ body {
 .el-row {
   width: 100%;
 }
-.container-right{
-  display: block!important;
+.container-right {
+  display: block !important;
 }
-.router-view{
-  padding-top: 1.5rem;
+.router-view {
+  margin-top: 1.5rem;
+  box-sizing: border-box;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  background: none !important;
+  border: 1px solid #d7dae2;
+  border-radius: 4px;
 }
 </style>
 
