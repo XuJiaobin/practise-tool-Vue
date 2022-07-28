@@ -10,6 +10,7 @@
   "dependencies": {
     "babel-plugin-component": "^1.1.1",
     "core-js": "^3.8.3",
+    "dayjs": "^1.11.4",
     "element-ui": "^2.15.9",
     "solarlunar": "^2.0.7",
     "vue": "^2.6.14",

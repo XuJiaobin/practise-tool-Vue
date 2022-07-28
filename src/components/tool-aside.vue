@@ -13,7 +13,7 @@
                 </template>
                 <el-menu-item-group>
                     <span slot="title">编码转码</span>
-                    <el-menu-item index="/transcoding/unicode">Unicode编码/解码</el-menu-item>
+                    <el-menu-item index="/transcoding/unicode">Unicode编码转换</el-menu-item>
                     <el-menu-item index="/transcoding/utf8Coding">UTF-8编码</el-menu-item>
                     <el-menu-item index="/transcoding/urlCoding">URL编码/解码</el-menu-item>
                     <el-menu-item index="/transcoding/unixTime">unix时间戳转换</el-menu-item>

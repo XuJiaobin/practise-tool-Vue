@@ -64,5 +64,20 @@ export default {
     toolAside,
     toolHeader,
   },
+  methods: {
+    warnMessage(msg) {
+      this.$message({
+        message: msg,
+        type: "warning",
+        offset: 1,
+      });
+    },
+  },
+  mounted(){
+    this.$bus.$on('warnMessage',this.warnMessage)
+  },
+  beforeDestroy(){
+    this.$bus.$off('warnMessage',this.warnMessage)
+  }
 };
 </script>

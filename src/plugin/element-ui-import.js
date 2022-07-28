@@ -23,6 +23,8 @@ import {
     Col,
     Skeleton,
     SkeletonItem,
+    Select,
+    Option,
     Dialog,
     Popover,
 } from "element-ui";
@@ -50,6 +52,8 @@ export default {
         Vue.component(Col.name,Col);
         Vue.component(Skeleton.name, Skeleton);
         Vue.component(SkeletonItem.name, SkeletonItem);
+        Vue.component(Select.name, Select);
+        Vue.component(Option.name, Option);
         Vue.component(Popover.name, Popover);
         // Vue.prototype.$message = Message;
     },

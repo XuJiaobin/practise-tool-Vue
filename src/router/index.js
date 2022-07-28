@@ -20,28 +20,6 @@ const router = new VueRouter({
             meta: { title: "首页" },
         },
         {
-            path: "/encryptOrDecode",
-            component: { render: (e) => e("router-view") },
-            meta: { title: "加密解密" },
-            children: [
-                {
-                    path: "Base64",
-                    component: toolBase64,
-                    meta: { title: "BASE64加密解密" },
-                },
-                {
-                    path: "MD5",
-                    component: toolMD5,
-                    meta: { title: "MD5加密" },
-                },
-                {
-                    path: "sha1",
-                    component: toolSha1,
-                    meta: { title: "sha1加密" },
-                },
-            ],
-        },
-        {
             path: "/transcoding",
             //如父级没有component可以用以下写法
             component: { render: (e) => e("router-view") },
@@ -71,6 +49,28 @@ const router = new VueRouter({
                     path: "utf8Coding",
                     component: toolUTF8Coding,
                     meta: { title: "UTF-8转码" },
+                },
+            ],
+        },
+        {
+            path: "/encryptOrDecode",
+            component: { render: (e) => e("router-view") },
+            meta: { title: "加密解密" },
+            children: [
+                {
+                    path: "Base64",
+                    component: toolBase64,
+                    meta: { title: "BASE64加密解密" },
+                },
+                {
+                    path: "MD5",
+                    component: toolMD5,
+                    meta: { title: "MD5加密" },
+                },
+                {
+                    path: "sha1",
+                    component: toolSha1,
+                    meta: { title: "sha1加密" },
                 },
             ],
         },
