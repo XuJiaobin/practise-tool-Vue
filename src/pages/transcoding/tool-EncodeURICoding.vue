@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="encode-wrap">
     <!-- 上方输入框 -->
     <div class="top">
       <el-input
@@ -212,13 +212,12 @@ export default {
   },
 };
 </script>
-
 <style>
-input,
-textarea {
-  height: 200px;
+.encode-wrap input, .encode-wrap textarea{
+height: 200px;
 }
 </style>
+
 <style scoped>
 .button-wrap {
   margin-top: 1rem;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="unicode-wrap">
         <!-- 上方输入框 -->
         <div class="top">
             <el-input
@@ -103,7 +103,11 @@ export default {
     },
 };
 </script>
-
+<style>
+.unicode-wrap input, .unicode-wrap textarea{
+height: 200px;
+}
+</style>
 <style scoped>
 .button-wrap {
     margin-top: 1rem;
