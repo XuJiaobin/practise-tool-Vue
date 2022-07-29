@@ -28,6 +28,12 @@ import {
     Dialog,
     Popover,
     DatePicker,
+    Divider,
+    Radio,
+    Slider,
+    Tabs,
+    TabPane,
+    ColorPicker,
 } from "element-ui";
 export default {
     install() {
@@ -55,8 +61,14 @@ export default {
         Vue.component(SkeletonItem.name, SkeletonItem);
         Vue.component(Select.name, Select);
         Vue.component(Option.name, Option);
-        Vue.component(Popover.name, Popover);
+        Vue.component(Popover.name, Popover); 
         Vue.component(DatePicker.name, DatePicker);
+        Vue.component(Divider.name, Divider);
+        Vue.component(Radio.name, Radio);
+        Vue.component(Slider.name, Slider);
+        Vue.component(Tabs.name, Tabs);
+        Vue.component(TabPane.name, TabPane);
+        Vue.component(ColorPicker.name, ColorPicker);
         // Vue.prototype.$message = Message;
     },
 };
