@@ -82,6 +82,9 @@ export default {
 </script>
 
 <style scoped>
+.el-input__inner{
+    height: 40px;
+}
 .showUnix {
     text-align: center;
     border-bottom: 1px solid #d7dae2;

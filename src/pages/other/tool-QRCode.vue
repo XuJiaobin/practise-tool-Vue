@@ -263,7 +263,7 @@ export default {
         dotScale: 1,
       },
       tempQRconfig: {
-        name:'111111'
+        
       },
       textarea: "",
       qrMoreDialog: false,
@@ -315,13 +315,16 @@ export default {
       if (!this.tempQRconfig.size && !this.deepEqual(this.QRconfig, this.defalutQRconfig)) {
         this.QRconfig = {...this.defalutQRconfig};
       }
+      if(this.tempQRconfig.size){
+        this.QRconfig = {...this.tempQRconfig};
+      }
     },
     enterQRsetting(){
       this.qrMoreDialog = false;
       if(!this.deepEqual(this.QRconfig, this.defalutQRconfig)){
         this.tempQRconfig = {...this.QRconfig};
       }
-    }
+    },
     isObject(object) {
       return object != null && typeof object === "object";
     },
@@ -336,7 +339,7 @@ export default {
         const val2 = object2[keys2[index]];
         const areObjects = this.isObject(val1) && this.isObject(val2);
         if (
-          (areObjects && !deepEqual(val1, val2)) ||
+          (areObjects && !this.deepEqual(val1, val2)) ||
           (!areObjects && val1 !== val2)
         ) {
           return false;
