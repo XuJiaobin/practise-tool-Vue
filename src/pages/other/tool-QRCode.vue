@@ -439,32 +439,6 @@ export default {
 .qrcode-input textarea {
   height: 204px;
 }
-.el-radio__input.is-checked .el-radio__inner::after {
-  transform: translate(-50%, -50%) scale(1);
-}
-.el-select {
-  position: relative;
-}
-.el-select__tags {
-  position: inherit;
-  transform: translateY(0);
-  padding: 3px 0;
-  min-height: 28px;
-}
-.el-select__tags ~ .el-input {
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-.el-input__inner {
-  min-height: 20px;
-  height: 100% !important;
-}
-.el-select__input.is-mini {
-  min-height: 20px;
-}
 .slider_label {
   line-height: 38px;
 }
