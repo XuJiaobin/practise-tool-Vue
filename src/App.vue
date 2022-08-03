@@ -6,6 +6,7 @@
         <el-container class="container-right">
           <toolHeader></toolHeader>
           <router-view class="router-view"></router-view>
+          <toolFooter></toolFooter>
         </el-container>
       </el-col>
     </el-row>
@@ -57,12 +58,14 @@ body {
 
 <script>
 import toolAside from "./components/tool-aside";
+import toolFooter from './components/tool-footer';
 import toolHeader from "./components/tool-header";
 export default {
   name: "App",
   components: {
     toolAside,
     toolHeader,
+    toolFooter,
   },
   methods: {
     warnMessage(msg) {
