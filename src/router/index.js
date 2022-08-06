@@ -11,6 +11,7 @@ import toolUTF8Coding from "../pages/transcoding/tool-UTF8Coding.vue";
 import toolQRCode from "../pages/other/tool-QRCode.vue";
 import toolRandomNum from "../pages/other/tool-RandomNum.vue";
 import toolRegular from "../pages/other/tool-toolRegular";
+import base from "../pages/other/tool-BaseConversion.vue";
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -95,9 +96,20 @@ const router = new VueRouter({
                     component: toolRegular,
                     meta: { title: "正则表达式测试工具" },
                 },
+                {
+                    path: "base",
+                    component: base,
+                    meta: { title: "进制转换" },
+                },
             ],
         },
     ],
 });
-
+router.afterEach((to, from) => {
+    if (to.meta.title) {
+        document.title = to.meta.title; //修改网页的title
+    } else {
+        document.title = "欢迎";
+    }
+});
 export default router;

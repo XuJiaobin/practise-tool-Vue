@@ -34,6 +34,8 @@ import {
     Tabs,
     TabPane,
     ColorPicker,
+    RadioGroup,
+    RadioButton,
 } from "element-ui";
 export default {
     install() {
@@ -69,6 +71,8 @@ export default {
         Vue.component(Tabs.name, Tabs);
         Vue.component(TabPane.name, TabPane);
         Vue.component(ColorPicker.name, ColorPicker);
+        Vue.component(RadioGroup.name, RadioGroup);
+        Vue.component(RadioButton.name, RadioButton);
         // Vue.prototype.$message = Message;
     },
 };

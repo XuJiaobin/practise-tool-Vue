@@ -1,7 +1,7 @@
 <template>
     <el-aside width="auto">
         <section class="logo" style="text-align: center">奇怪的工具箱</section>
-        <el-menu :default-openeds="['1']" class="el-menu-vertical-demo" :collapse="isCollapse" :router="true">
+        <el-menu :default-openeds="['1']" :default-active="defatltActive" class="el-menu-vertical-demo" :collapse="isCollapse" :router="true">
             <el-menu-item index="/">
                 <i class="el-icon-menu"></i>
                 <span slot="title">首页</span>
@@ -30,6 +30,7 @@
                     <el-menu-item index="/other/QRCode">二维码生成</el-menu-item>
                     <el-menu-item index="/other/Regular">正则测试工具</el-menu-item>
                     <el-menu-item index="/other/RandomNum">随机数生成</el-menu-item>
+                    <el-menu-item index="/other/base">进制转换</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
         </el-menu>
@@ -42,17 +43,24 @@ export default {
     data() {
         return {
             isCollapse: false,
+            defatltActive: "/",
         };
+    },
+    created() {
+        this.defatltActive = this.$route.path;
     },
 };
 </script>
 
-<style scope>
+<style scoped>
 .el-aside {
     min-width: auto;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: calc(100% - 1px);
     /* min-height: 400px; */
+}
+.el-menu-item.is-active {
+    background-color: #ecf5ff;
 }
 </style>
