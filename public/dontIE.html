@@ -6,17 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IE😬😬😬😬😬</title>
+    <style>
+        body {
+            text-align: center;
+        }
 
+        #text,
+        .text {
+            display: inline-block;
+            font-size: 30px;
+            margin: 20px 0;
+            color: cornflowerblue;
+        }
+
+        .pic ,.pic2{
+            display: flex;
+            justify-content: center;
+        }
+
+        .pic img:nth-of-type(2) {
+            width: 300px;
+        }
+        .pic2 img{
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="text"></div>
-    <div><img src="<%= BASE_URL %>故IE.jpg" alt=""></div>
-    <div class="">请使用现代浏览器Chrome Firefox Safari</div>
+    <div class="pic"><img src="/故IE.jpg" alt=""><img src="/dontIE.png" alt=""></div>
+    <div class="text">请使用现代浏览器Chrome Firefox Safari</div>
+    <div class="pic2"><img src="/chrome.png" alt=""><img src="/firefox.png" alt=""><img src="/safari.png" alt=""></div>
     <script>
         let date = new Date();
         date = date.getFullYear();
-        document.getSelection("#text").innerHTML = "都" + date + "年了，不要在用IE啦"
+        document.getElementById("text").innerHTML = "🤡🤡都" + date + "年了，不要在用IE啦，没错说的就是你🤡🤡"
     </script>
 </body>
 
