@@ -14,8 +14,7 @@
                 <el-menu-item-group>
                     <span slot="title">编码转码</span>
                     <el-menu-item index="/transcoding/unicode">Unicode编码转换</el-menu-item>
-                    <el-menu-item index="/transcoding/utf8Coding">UTF-8编码</el-menu-item>
-                    <el-menu-item index="/transcoding/urlCoding">URL编码/解码</el-menu-item>
+                    <el-menu-item index="/transcoding/urlCoding">URL-16进制编码</el-menu-item>
                     <el-menu-item index="/transcoding/unixTime">unix时间戳转换</el-menu-item>
                     <el-menu-item index="/transcoding/encodeuri">encodeURI/decodeURI</el-menu-item>
                 </el-menu-item-group>
@@ -31,6 +30,7 @@
                     <el-menu-item index="/other/Regular">正则测试工具</el-menu-item>
                     <el-menu-item index="/other/RandomNum">随机数生成</el-menu-item>
                     <el-menu-item index="/other/base">进制转换</el-menu-item>
+                    <el-menu-item index="/other/bytes">字节转换</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
         </el-menu>

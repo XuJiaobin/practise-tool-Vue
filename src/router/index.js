@@ -12,6 +12,7 @@ import toolQRCode from "../pages/other/tool-QRCode.vue";
 import toolRandomNum from "../pages/other/tool-RandomNum.vue";
 import toolRegular from "../pages/other/tool-toolRegular";
 import base from "../pages/other/tool-BaseConversion.vue";
+import bytes from "../pages/other/tool-bytesCoding";
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -46,11 +47,6 @@ const router = new VueRouter({
                     component: toolURLCoding,
                     meta: { title: "URL转码" },
                 },
-                {
-                    path: "utf8Coding",
-                    component: toolUTF8Coding,
-                    meta: { title: "UTF-8转码" },
-                },
             ],
         },
         {
@@ -84,22 +80,27 @@ const router = new VueRouter({
                 {
                     path: "QRCode",
                     component: toolQRCode,
-                    meta: { title: "encodeURI/decodeURI" },
+                    meta: { title: "二维码生成" },
                 },
                 {
                     path: "RandomNum",
                     component: toolRandomNum,
-                    meta: { title: "unicode" },
+                    meta: { title: "随机数生成" },
                 },
                 {
                     path: "Regular",
                     component: toolRegular,
-                    meta: { title: "正则表达式测试工具" },
+                    meta: { title: "正则测试工具" },
                 },
                 {
                     path: "base",
                     component: base,
                     meta: { title: "进制转换" },
+                },
+                {
+                    path: "bytes",
+                    component: bytes,
+                    meta: { title: "字节转换" },
                 },
             ],
         },

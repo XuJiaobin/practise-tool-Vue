@@ -1,5 +1,4 @@
 <template>
-    <div>
         <el-container>
             <el-row>
                 <el-col :span="5">
@@ -20,7 +19,6 @@
                 </el-col>
             </el-row>
         </el-container>
-    </div>
 </template>
 
 <script>
