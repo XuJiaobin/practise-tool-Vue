@@ -76,9 +76,6 @@ export default {
 .button-wrap {
   margin-top: 1rem;
 }
-.el-button {
-  margin-bottom: 1rem;
-}
 .el-icon-sort {
   font-size: 24px;
   color: #606266;
