@@ -7,12 +7,12 @@ import toolEncodeURICoding from "../pages/transcoding/tool-EncodeURICoding.vue";
 import toolUnicode from "../pages/transcoding/tool-Unicode.vue";
 import toolunixTimeCoding from "../pages/transcoding/tool-UnixTimeCoding";
 import toolURLCoding from "../pages/transcoding/tool-URLCoding.vue";
-import toolUTF8Coding from "../pages/transcoding/tool-UTF8Coding.vue";
 import toolQRCode from "../pages/other/tool-QRCode.vue";
 import toolRandomNum from "../pages/other/tool-RandomNum.vue";
 import toolRegular from "../pages/other/tool-toolRegular";
 import base from "../pages/other/tool-BaseConversion.vue";
 import bytes from "../pages/other/tool-bytesCoding";
+import NotFound from "../pages/NotFound.vue";
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -103,6 +103,16 @@ const router = new VueRouter({
                     meta: { title: "字节转换" },
                 },
             ],
+        },
+        {
+            path:"/404",
+            component: NotFound,
+            meta: { title: "404" },
+        },
+        {
+            path: "*",
+            redirect:"/404"
+
         },
     ],
 });
