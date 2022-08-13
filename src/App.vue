@@ -54,6 +54,9 @@ body {
   border: 1px solid #d7dae2;
   border-radius: 4px;
 }
+.top input, .top textarea,.buttom input, .buttom textarea{
+height: 200px;
+}
 </style>
 
 <script>

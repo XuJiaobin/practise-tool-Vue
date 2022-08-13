@@ -212,11 +212,6 @@ export default {
   },
 };
 </script>
-<style>
-.encode-wrap input, .encode-wrap textarea{
-height: 200px;
-}
-</style>
 
 <style scoped>
 .button-wrap {

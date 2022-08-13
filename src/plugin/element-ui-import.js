@@ -36,6 +36,8 @@ import {
     ColorPicker,
     RadioGroup,
     RadioButton,
+    Checkbox,
+    CheckboxGroup,
 } from "element-ui";
 export default {
     install() {
@@ -73,6 +75,8 @@ export default {
         Vue.component(ColorPicker.name, ColorPicker);
         Vue.component(RadioGroup.name, RadioGroup);
         Vue.component(RadioButton.name, RadioButton);
+        Vue.component(Checkbox.name,Checkbox);
+        Vue.component(CheckboxGroup.name,CheckboxGroup)
         // Vue.prototype.$message = Message;
     },
 };
