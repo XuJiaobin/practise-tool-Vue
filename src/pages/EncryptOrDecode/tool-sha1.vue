@@ -1,17 +1,7 @@
 <template>
     <div class="encode-wrap">
         <!-- 上方输入框 -->
-        <div class="top">
-            <el-input
-                class="topInput"
-                ref="topInput"
-                type="textarea"
-                v-model="topInput"
-                placeholder="请输入要转换的内容"
-                :clearable="true"
-                resize="none"
-            />
-        </div>
+        <toolTextarea v-model="topInput" placeholder="请输入要转换的内容"></toolTextarea>
         <!-- 转换按钮 -->
         <div class="button-wrap">
             <el-button @click="sha('sha1')">sha1</el-button>
@@ -21,16 +11,18 @@
             <el-button @click="sha('sha512')">sha512</el-button>
         </div>
         <!-- 下方输入框 -->
-        <div class="buttom">
-            <el-input type="textarea" v-model="bottomInput" placeholder="请输入要转换的内容" :clearable="true" resize="none" />
-        </div>
+        <toolTextarea v-model="bottomInput" placeholder="请输入要转换的内容" :readonly="true"></toolTextarea>
     </div>
 </template>
 
 <script>
 import shajs from "sha.js";
+import toolTextarea from "@/components/tool-textarea.vue";
 export default {
     name: "toolSha",
+    components: {
+        toolTextarea,
+    },
     data() {
         return {
             topInput: "",
@@ -38,9 +30,9 @@ export default {
         };
     },
     methods: {
-      sha(name){
-        this.bottomInput = shajs(name).update(this.topInput).digest('hex')
-      }
+        sha(name) {
+            this.bottomInput = shajs(name).update(this.topInput).digest("hex");
+        },
     },
 };
 </script>

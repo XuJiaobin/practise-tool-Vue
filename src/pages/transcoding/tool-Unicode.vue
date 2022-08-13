@@ -1,17 +1,7 @@
 <template>
     <div class="unicode-wrap">
         <!-- 上方输入框 -->
-        <div class="top">
-            <el-input
-                class="topInput"
-                ref="topInput"
-                type="textarea"
-                v-model="topInput"
-                placeholder="请输入要转换的内容"
-                :clearable="true"
-                resize="none"
-            />
-        </div>
+        <toolTextarea v-model="topInput" placeholder="请输入要转换的内容"></toolTextarea>
         <div class="button-wrap">
             <el-button @click="Native2Unicode">Native 转换 Unicode</el-button>
             <el-button @click="native2ascii">Native 转换 ASCII</el-button>
@@ -22,15 +12,17 @@
             <el-button @click="UTF82Native">UTF-8 转换 Native</el-button>
         </div>
         <!-- 下方输入框 -->
-        <div class="buttom">
-            <el-input type="textarea" v-model="bottomInput" placeholder="请输入要转换的内容" :clearable="true" resize="none" />
-        </div>
+        <toolTextarea v-model="bottomInput" placeholder="请输入要转换的内容"></toolTextarea>
     </div>
 </template>
 
 <script>
+import toolTextarea from "@/components/tool-textarea.vue";
 export default {
     name: "toolUnicode",
+    components: {
+        toolTextarea,
+    },
     data() {
         return {
             topInput: "",
@@ -104,8 +96,9 @@ export default {
 };
 </script>
 <style>
-.unicode-wrap input, .unicode-wrap textarea{
-height: 200px;
+.unicode-wrap input,
+.unicode-wrap textarea {
+    height: 200px;
 }
 </style>
 <style scoped>
