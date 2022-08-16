@@ -11,6 +11,7 @@
         ></el-input>
         <div class="button-wrap">
           <el-button type="primary" @click="createdQR">生成二维码</el-button>
+          <el-button type="primary" @click="defalutConfig">清空配置</el-button>
         </div>
       </el-col>
       <el-col :xl="3" :lg="5" :offset="1" class="qrcode-wrap">
@@ -216,9 +217,7 @@
       </el-row>
       <span slot="footer" class="dialog-footer">
         <el-button @click="cancelQRsetting">取 消</el-button>
-        <el-button type="primary" @click="enterQRsetting"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="enterQRsetting">确 定</el-button>
       </span>
     </el-dialog>
   </el-container>
@@ -262,17 +261,22 @@ export default {
         logoCornerRadius: 0,
         dotScale: 1,
       },
-      tempQRconfig: {
-        
-      },
+      tempQRconfig: {},
       textarea: "",
       qrMoreDialog: false,
       qrShow: false,
       tabsActive: "first",
       dotScaleMessage: true,
+      localStorageData: false,
     };
   },
   components: { VueQr },
+  mounted() {
+    let local = localStorage.getItem("QRSaveConfig");
+    let { text, ...config } = JSON.parse(local);
+    this.QRconfig = { ...config, text: "" };
+    this.localStorageData = true;
+  },
   watch: {
     // 监听码颜色如果为空传黑色
     "QRconfig.colorDark"(newVal, oldVal) {
@@ -301,30 +305,44 @@ export default {
     },
   },
   methods: {
+    // 创建二维码
     createdQR() {
+      this.$message.success("已使用上次配置，如不需要请点击下方清空配置");
       this.qrShow = true;
       this.QRconfig.text = this.textarea;
       this.defalutQRconfig.text = this.textarea;
-      console.log(this.defalutQRconfig);
     },
+    defalutConfig() {
+      let { text, ...config } = this.defalutQRconfig;
+      text = this.QRconfig.text
+      this.QRconfig = { ...config,text,};
+      this.$message.success("已清空配置");
+    },
+    // 更多设置index
     qrMoreSetting() {
       this.qrMoreDialog = true;
     },
+    // 取消设置
     cancelQRsetting() {
       this.qrMoreDialog = false;
-      if (!this.tempQRconfig.size && !this.deepEqual(this.QRconfig, this.defalutQRconfig)) {
-        this.QRconfig = {...this.defalutQRconfig};
+      if (
+        !this.tempQRconfig.size &&
+        !this.deepEqual(this.QRconfig, this.defalutQRconfig)
+      ) {
+        this.QRconfig = { ...this.defalutQRconfig };
       }
-      if(this.tempQRconfig.size){
-        this.QRconfig = {...this.tempQRconfig};
+      if (this.tempQRconfig.size) {
+        this.QRconfig = { ...this.tempQRconfig };
       }
     },
-    enterQRsetting(){
+    // 确定设置
+    enterQRsetting() {
       this.qrMoreDialog = false;
-      if(!this.deepEqual(this.QRconfig, this.defalutQRconfig)){
-        this.tempQRconfig = {...this.QRconfig};
+      if (!this.deepEqual(this.QRconfig, this.defalutQRconfig)) {
+        this.tempQRconfig = { ...this.QRconfig };
       }
     },
+    // 如点击取消返回上次配置
     isObject(object) {
       return object != null && typeof object === "object";
     },
@@ -348,6 +366,7 @@ export default {
 
       return true;
     },
+    // 图片转换base64
     getBase64(file) {
       if (!file.target.files.length) return;
       new Promise((resolve, reject) => {
@@ -362,8 +381,9 @@ export default {
         };
       });
     },
+    // 下载
     downloadFile() {
-      console.log(this.$refs.qrcodeMain.imgUrl);
+      localStorage.setItem("QRSaveConfig", JSON.stringify(this.QRconfig));
       let content = this.$refs.qrcodeMain.imgUrl;
       let aLink = document.createElement("a");
       let blob = this.base64ToBlob(content); // new Blob([content]);

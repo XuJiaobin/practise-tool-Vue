@@ -38,6 +38,7 @@ import {
     RadioButton,
     Checkbox,
     CheckboxGroup,
+    Upload,
 } from "element-ui";
 export default {
     install() {
@@ -76,7 +77,8 @@ export default {
         Vue.component(RadioGroup.name, RadioGroup);
         Vue.component(RadioButton.name, RadioButton);
         Vue.component(Checkbox.name,Checkbox);
-        Vue.component(CheckboxGroup.name,CheckboxGroup)
+        Vue.component(CheckboxGroup.name,CheckboxGroup);
+        Vue.component(Upload.name,Upload);
         // Vue.prototype.$message = Message;
     },
 };

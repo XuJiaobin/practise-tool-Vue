@@ -57,7 +57,7 @@ const router = new VueRouter({
                 {
                     path: "Base64",
                     component: toolBase64,
-                    meta: { title: "BASE64加密解密" },
+                    meta: { title: "BASE64编码/解码" },
                 },
                 {
                     path: "MD5",

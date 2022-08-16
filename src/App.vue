@@ -24,6 +24,10 @@
 }
 body {
   overflow: hidden;
+  scrollbar-width: none; /* firefox */
+}
+.el-aside::-webkit-scrollbar{
+  display: none;
 }
 .el-header {
   background-color: #b3c0d1;
@@ -54,14 +58,17 @@ body {
   border: 1px solid #d7dae2;
   border-radius: 4px;
 }
-.top input, .top textarea,.buttom input, .buttom textarea{
-height: 200px;
+.top input,
+.top textarea,
+.buttom input,
+.buttom textarea {
+  height: 200px;
 }
 </style>
 
 <script>
 import toolAside from "./components/tool-aside";
-import toolFooter from './components/tool-footer';
+import toolFooter from "./components/tool-footer";
 import toolHeader from "./components/tool-header";
 export default {
   name: "App",
@@ -79,11 +86,11 @@ export default {
       });
     },
   },
-  mounted(){
-    this.$bus.$on('warnMessage',this.warnMessage)
+  mounted() {
+    this.$bus.$on("warnMessage", this.warnMessage);
   },
-  beforeDestroy(){
-    this.$bus.$off('warnMessage',this.warnMessage)
-  }
+  beforeDestroy() {
+    this.$bus.$off("warnMessage", this.warnMessage);
+  },
 };
 </script>
