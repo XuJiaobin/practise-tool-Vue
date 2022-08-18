@@ -2,9 +2,8 @@
   <footer>
     <p>
       Copyright © 2022 xujiaobin 版权所有
-      <a href="https://beian.miit.gov.cn/" target="_blank"
-        >吉ICP备2022004874号</a
-      >
+      <a href="https://beian.miit.gov.cn/" target="_blank">吉ICP备2022004874号</a>
+      <router-link to="/about" class="about">关于本站</router-link>
     </p>
   </footer>
 </template>
@@ -28,5 +27,8 @@ footer {
 footer a {
   color: inherit;
   text-decoration: none;
+}
+.about{
+  padding-left: 0.5rem;
 }
 </style>

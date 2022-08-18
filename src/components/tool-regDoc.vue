@@ -771,7 +771,7 @@ export default {};
 
 <style scoped>
 .regdoc{
-    height: calc(100vh - 421px);
+    height: calc(95vh - 421px);
     overflow-y: auto;
 }
 table {

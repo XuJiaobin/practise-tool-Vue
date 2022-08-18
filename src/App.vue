@@ -5,7 +5,9 @@
       <el-col :xl="20" :lg="19" :md="18" :offset="1" class="main_col_right">
         <el-container class="container-right">
           <toolHeader></toolHeader>
-          <router-view class="router-view"></router-view>
+          <keep-alive include="tool-index">
+            <router-view class="router-view"></router-view>
+          </keep-alive>
           <toolFooter></toolFooter>
         </el-container>
       </el-col>
@@ -13,6 +15,9 @@
   </el-container>
 </template>
 <style>
+[v-cloak]{
+    display: none!important;
+}
 * {
   padding: 0;
   margin: 0;
@@ -26,7 +31,7 @@ body {
   overflow: hidden;
   scrollbar-width: none; /* firefox */
 }
-.el-aside::-webkit-scrollbar{
+.el-aside::-webkit-scrollbar,.el-card .el-card__body::-webkit-scrollbar {
   display: none;
 }
 .el-header {

@@ -39,6 +39,8 @@ import {
     Checkbox,
     CheckboxGroup,
     Upload,
+    Card,
+    Image,
 } from "element-ui";
 export default {
     install() {
@@ -79,6 +81,8 @@ export default {
         Vue.component(Checkbox.name,Checkbox);
         Vue.component(CheckboxGroup.name,CheckboxGroup);
         Vue.component(Upload.name,Upload);
+        Vue.component(Card.name,Card);
+        Vue.component(Image.name,Image);
         // Vue.prototype.$message = Message;
     },
 };

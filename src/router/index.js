@@ -13,10 +13,12 @@ import toolRegular from "../pages/other/tool-toolRegular";
 import base from "../pages/other/tool-BaseConversion.vue";
 import bytes from "../pages/other/tool-bytesCoding";
 import NotFound from "../pages/NotFound.vue";
+import about from "../pages/tool-about.vue"
 const router = new VueRouter({
     mode: "history",
     routes: [
         {
+            name:"index",
             path: "/",
             component: toolIndex,
             meta: { title: "首页" },
@@ -103,6 +105,11 @@ const router = new VueRouter({
                     meta: { title: "字节转换" },
                 },
             ],
+        },
+        {
+            path:"/about",
+            component: about,
+            meta: { title: "关于本站" },
         },
         {
             path:"/404",
