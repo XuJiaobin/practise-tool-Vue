@@ -21,6 +21,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ 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 }}
+          GITHUB_TOKEN: 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
           branch: gh-pages
           folder: dist
